@@ -5,7 +5,7 @@ import "./cookingScreen.styles.css"
 
 import bread from "../../images/ingredients/bread.png"
 import prawn from "../../images/ingredients/prawn.png"
-import lettuce from "../../images/ingredients/lettuce.png"
+import lettuce from '../../images/ingredients/lettuce.png'
 
 import loaf from "../../images/recipes/loaf_of_bread.jpg"
 import cabbage from "../../images/recipes/cabbage.jpg"
@@ -53,11 +53,11 @@ const CookingScreen = () => {
     const [delicacySrc, setDelicacySrc] = useState(false)
     const [hunger, setHunger] = useState(0)
 
-    // useEffect(()=>{
-    //     axios.get("url").then(response => {
-    //         console.log(response.data)
-    //     })
-    // },[])
+    useEffect(()=>{
+        axios.get("https://ingredientsapi.herokuapp.com/api/img").then(response => {
+            console.log(response.data)
+        })
+    },[])
  
     let addIngredient = (ingredient) => {
         let emptyStoveIndex = ingredientsBoxes.indexOf(0)
